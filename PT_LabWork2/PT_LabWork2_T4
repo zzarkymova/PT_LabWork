@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PT_LabWork2_T4
+{
+    class Complex
+    {
+        int a;   // create integer value a
+        int b;   // create integer value b
+        public Complex(int a, int b)     
+        {
+            this.a = a;
+            this.b = b;
+        }
+        public static Complex operator +(Complex a1, Complex b2)       //rewrite operator +
+        {
+            Complex result = new Complex(0, 0);     
+            result.a = a1.a + b2.a;
+            result.b = a1.b + b2.b;
+            return result;
+        }
+        public override string ToString()    //we rewrite method ToString
+        {
+            return string.Format("{0} + {1}i", a, b);     //return a string value
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Complex a = new Complex(4, 1);     //create new complex value
+            Console.WriteLine(a);     //print out the result value a
+        }
+    }
+
+}
